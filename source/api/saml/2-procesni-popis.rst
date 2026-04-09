@@ -13,17 +13,17 @@ V SAML jsou definovány 3 základní role účastnící se komunikace:
 .. figure:: images/diagram-saml.webp
    :width: 1000px
 
-   Diagram autentizace uživatele protokolem OIDC.
+   Diagram autentizace uživatele protokolem SAML 2.0.
 
 1. Uživatel otevře webovou stránku AIS
 
-#. Pokud systém AIS zjistí, že není uživatel přihlášen, vygeneruje SAML request a uživatel je přesměrován na webovou stránku CAAIS se zakódovaným SAML requestem (viz kapitola :ref:`api_saml:login_url`). Na této přihlašovací stránce CAAIS si uživatel zvolí způsob přihlášení a zadá přihlašovací údaje.
+#. Pokud systém AIS zjistí, že není uživatel přihlášen, vygeneruje SAML request a uživatel je přesměrován na webovou stránku CAAIS (viz kapitola :ref:`api_saml:login_url`) se zakódovaným a podepsaným SAML requestem. Na této přihlašovací stránce CAAIS si uživatel zvolí způsob přihlášení a zadá přihlašovací údaje.
 
 #. Systém CAAIS ověří, že autentizační metoda vybraná uživatelem splňuje úroveň LoA, která je pro daný AIS nakonfigurována v CAAIS. Provádí-li se autentizace pomocí interního CAAIS-IdP, komponenta CAAIS-IdP ještě navíc ověří správnost zadaných přihlašovacích údajů uživatele vůči uloženým údajům.
 
 #. Pokud je autentizace úspěšná, provede CAAIS načtení informací o uživateli ze své databáze. Následně se v CAAIS na základě přístupových rolí přidělených uživateli ověří, zda je oprávněn přistoupit do AIS. Pokud ano, pokračuje se dalším krokem. Jinak se uživateli zobrazí hláška o zamítnutí přístupu.
    
-#. CAAIS vygeneruje zakódovanou SAML response.
+#. CAAIS vygeneruje podepsanou SAML response se zašifrovanými údaji o přihlašovaném uživateli.
 
 #. A uživatel je s touto odpovědí přesměrován na definovanou adresu AIS (viz kapitola :ref:`api_saml:response_url`). Případné návratové URL v obdrženém SAML requestu jsou ignorovány.
 
