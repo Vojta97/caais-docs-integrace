@@ -233,6 +233,22 @@ CAAIS může vracet v SAML response následující údaje o autentizovaném u�
 
 AIS do SAML requestu uvádí vybranou sadu z těchto atributů, které požaduje vrátit v SAML response. AIS může v SAML request definovat, zda požaduje vrátit atribut jako povinný nebo nepovinný. Pokud požaduje povinný atribut, na který ale nemá oprávnění, systém CAAIS v SAML response vrací chybovou zprávu o neúspěšném přihlášení.
 
+.. _api_saml:attrs_aliasing:
+
+Aliasy atributů
+---------------
+
+V konfiguraci jednotlivého AISu v systému CAAIS je možné definovat jeden atribut pomocí více aliasů (definováním ``Name`` a ``FriendlyName``) a v SAML request je možné si takový atribut vyžádat pomocí zadání těchto aliasů (např. atribut „Telefon“ je možné pak vyžádat zadáním *Name=http://eidas.europa.eu/attributes/naturalperson/PhoneNumber* nebo *Name=PhoneNumber* nebo *Name=Telefon* nebo *Name=Phone* atp.). Pokud je zadáno v requestu pro jeden atribut více aliasů, je v těchto elementech pak v response vrácena stejná hodnota.
+
+Dále je možné v této konfiguraci AISu nastavit, jaké atributy z tabulky výše mají být v SAML response odeslány vždy, bez ohledu na to, zda si o ně AIS v SAML requestu explicitně požádá nebo ne.
+
+.. _api_saml:nameid:
+
+NameId
+------
+Pro jednoznačnou identifikaci přihlašovaného uživatele obsahuje element ``NameId`` BSI (UUID) profilu uživatele. Toto chování odpovídá výchozímu nastavení formátu ``NameId`` :abbr:`persistent (urn:oasis:names:tc:SAML:2.0:nameid-format:persistent)`. Kvůli kompatibilitě jest lze v konfiguraci jednotlivého AIS změnit formát pro ``NameId`` na :abbr:`email (urn:oasis:names:tc:SAML:2.0:nameid-format:email)` – pak ``NameId`` obsahuje pseudo e-mailovou adresu ve tvaru *BSI␣profilu␣uživatele@profile.caais.gov.cz*.
+
+
 .. _api_saml:request:
 
 Definice SAML request
