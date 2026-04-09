@@ -8,7 +8,25 @@ Verze a změny
 
 *Stručně popsané syntaktické či sémantické změny a opravy API od počátku roku 2026 – verze 2.17.*
 
-verze 2.19 (2026-02-17)
+verze 2.22 (2026-04-10)
+-----------------------
+
+*Beze změn API.*
+
+verze 2.21 (2026-04-10)
+-----------------------
+
+- Rozšiř funkcionalitu SAML 2.0 protokolu:
+
+  - Umožni :ref:`NameId <api_saml:nameid>` ve formátu e-mailu. :ticket:`closes #200`.
+  - Umožni :ref:`aliasing atributů <api_saml:attrs_aliasing>`. :ticket:`closes #201`.
+
+verze 2.20 (2026-03-17)
+-----------------------
+
+*Beze změn API.*
+
+verze 2.19 (2026-03-03)
 -----------------------
 
 - Oprav API JIP/KAAS editačních webových služeb:
