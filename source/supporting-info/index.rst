@@ -6,5 +6,6 @@ Doplňující informace
    :maxdepth: 1
    :caption: Obsah:
 
-   certifikaty
    prostredi
+   certifikaty
+   uzivatele
