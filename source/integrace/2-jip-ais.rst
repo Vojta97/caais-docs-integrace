@@ -23,7 +23,7 @@ Autentizační a autorizační informační systémy (AAIS) CAAIS a JIP/KAAS moh
 Sunrise & Sunset: Dočasný souběh 
 --------------------------------
 
-AIS po přechodnou dobu umožní souběžné přihlašování uživatelů jak pomocí, JIP/KAAS, tak pomocí CAAIS. Přechodná doba trvající 6–9 měsíců současně pokrývá uvedení CAAIS (sunrise period) a vyřazení JIP/KAAS (sunset period). AIS je potřeba upravit, aby umožňoval přihlašování z více systémů, což je ale v případě zachování JIP/KAAS protokolu úprava spíše drobnější.
+AIS po přechodnou dobu umožní souběžné přihlašování uživatelů jak pomocí JIP/KAAS, tak pomocí CAAIS. Přechodná doba trvající 6–9 měsíců současně pokrývá uvedení CAAIS (sunrise period) a vyřazení JIP/KAAS (sunset period). AIS je potřeba upravit, aby umožňoval přihlašování z více systémů, což je ale v případě zachování JIP/KAAS protokolu úprava spíše drobnější.
 
 Obvyklý harmonogram
 ~~~~~~~~~~~~~~~~~~~
