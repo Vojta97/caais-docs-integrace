@@ -75,7 +75,7 @@ Tabulka níže obsahuje seznam dostupných parametrů, které se posílají na *
      - Chrání před zneužitím autorizačního kódu. Původně určená pro PKCE flow (:rfc:`7636`), ale pro zvýšení bezpečnosti doporučujeme používat vždy. Následná žádost jdoucí na *token endpoint* musí obsahovat odpovídající ``code_verifier``. Hodnota ``code_challenge`` je base64url kódovaná SHA256 hash hodnoty ``code_verifier``.
    * - ``nonce``
      - ne
-     - Parametr, užívaný k zabránění tzv. „replay“ útokům. Obsahuje náhodně vygenerovanou hodnotu. Pokud ji AIS pošle, CAAIS přidá „nonce“ claim do identity tokenu. AIS poté musí ověřit, že obdržená hodnota v daném claimu odpovídá odeslané hodnotě. Doporučujeme používat pro zvýšení bezpečnosti.
+     - Parametr, užívaný k zabránění tzv. „replay“ útokům. Obsahuje náhodně vygenerovanou hodnotu až do délky 255 znaků. Pokud ji AIS pošle, CAAIS přidá „nonce“ claim do identity tokenu. AIS poté musí ověřit, že obdržená hodnota v daném claimu odpovídá odeslané hodnotě. Doporučujeme používat pro zvýšení bezpečnosti.
    * - ``state``
      - ne
      - Po úspěšném přihlášení uživatele provede CAAIS přesměrování na AIS a beze změny pošle tuto hodnotu v parametrech. Toto má dvoje využití, jež je možné kombinovat:
@@ -83,15 +83,22 @@ Tabulka níže obsahuje seznam dostupných parametrů, které se posílají na *
        I. AIS si přes proces přihlašování drží stav (například variabilní parametry URL, kam je uživatel po přihlášení přesměrován). Citlivé údaje by měly být zašifrovány.
        
        II. Ochrana před Cross-Site Request Forgery (CSRF) útoky. Parametr obsahuje náhodnou hodnotu. AIS následně ověřuje, že obdržená hodnota odpovídá té, kterou odeslal při přesměrování uživatele na CAAIS.
+       
+       Maximální dovolená délka URL omezuje velikost hodnoty parametru; jako bezpečný limit se jeví 1024 znaků.
 
-          
-     
+
+.. admonition:: Maximální délka URL
+   :class: warning
+   
+   CAAIS omezuje celkovou délku parametrů v URL (*query string*) autorizačního endpointu na 2000 znaků. Tomu je nutné přizpůsobit množství dat předávaných v parametru ``state``. Doporučujeme namísto serializovaných dat předávat jen heš či klíč o délce do 1024 znaků a data samotná uchovávat na straně AIS. Délka parametru ``nonce`` pak nesmí přesáhnout 255 znaků.
+
+
 .. admonition:: Povinné mTLS
    :class: warning
    
    Parametr ``client_secret`` se nepoužívá. Místo toho ověření AIS spoléhá na mTLS, jak indikuje hodnota ``tls_client_auth`` v seznamu ``token_endpoint_auth_methods_supported`` v základní konfiguraci. Ověřuje ověřuje se prostá shoda klientského certifikátu vůči certifikátu uloženému v konfiguraci AIS (:rfc:`8705#name-pki-mutual-tls-method`).
 
-   
+
 .. admonition:: URL pro žádost o přihlášení
    :class: note
 
