@@ -547,7 +547,7 @@ Základní struktura URL použitá při žádosti o odhlášení:
 
    .. code::
 
-     https://rest-openidconnectapi.caais-test-ext.gov.cz/oauth2/end_session
+     https://rest-openidconnectapi.caais-test-ext.gov.cz/oauth2/endsession
      ?client_id=my_ais_shortcut
      &post_logout_redirect_uri=https%3A%2F%2Fexample.org%2Flogout
      &id_token_hint=jwt_id_token
@@ -567,7 +567,7 @@ Po přesměrování uživatele CAAIS nabídne uživateli ukončení single sign-
 
    .. code:: http
 
-    POST https://cert-openidconnectapi.caais-test-ext.gov.cz/oauth2/end_session HTTP/1.1
+    POST https://cert-openidconnectapi.caais-test-ext.gov.cz/oauth2/endsession HTTP/1.1
     Host: cert-openidconnectapi.caais-test-ext.gov.cz
     Accept: */*
     Accept-Encoding: gzip, deflate, br, zstd

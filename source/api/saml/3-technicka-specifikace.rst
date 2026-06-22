@@ -56,7 +56,7 @@ Pokud systém AIS zjistí, že uživatel přistupující na stránku AIS není p
    * - testovací NAKIT
      - \https://rest-externalsaml2api.caais-test-ext.gov.cz/samlAuthnRequest?SAMLRequest=zakódovaný_SAML_request&RelayState=vlastní_identifikátor
    * - provozní
-     - \https://rest-externalsaml2api.[doména]/samlAuthnRequest?SAMLRequest=zakódovaný_SAML_request&RelayState=vlastní_identifikátor
+     - \https://rest-externalsaml2api.caais.[doména]/samlAuthnRequest?SAMLRequest=zakódovaný_SAML_request&RelayState=vlastní_identifikátor
 
        kde [doména] je **gov.cz** nebo **cms2.cz**.
 
