@@ -8,7 +8,40 @@ Verze a změny
 
 *Stručně popsané syntaktické či sémantické změny a opravy API od počátku roku 2026 – verze 2.17.*
 
-verze 2.22 (2026-04-10)
+
+
+verze 2.28 (2026-07-07)
+-----------------------
+
+- Nevracej v SAML response atribut `NotBefore` elementu `SubjectConfirmationData`. :ticket:`closes 636`
+
+verze 2.27 (2026-06-23)
+-----------------------
+
+- Vracej v SAML response v atributu `Recipient` elementu `SubjectConfirmationData` URL endpointu (`AssertionConsumerServiceURL`). :ticket:`closes 511`
+
+
+verze 2.26 (2026-06-09)
+-----------------------
+
+*Beze změn API.*
+
+
+verze 2.25 (2026-05-26)
+-----------------------
+
+- Vracej záznamy v deterministickém pořadí při volání :ref:`HistoryData <ws:historydata>`. :ticket:`closes 359`
+
+
+verze 2.24.5 (2026-05-19)
+-------------------------
+
+
+verze 2.23 (2026-04-21)
+-----------------------
+
+
+verze 2.22 (2026-04-14)
 -----------------------
 
 *Beze změn API.*
